@@ -17,6 +17,23 @@
     </div>
 
     <script>
+        const url = window.location.href;
+
+        // Create a URL object
+        const urlObject = new URL(url);
+
+        // Use URLSearchParams to get the query parameters
+        const params = new URLSearchParams(urlObject.search);
+
+        // Get the values of the parameters
+        const param1 = params.get('restId');
+        const param2 = params.get('tableNum');
+
+        // Log the values to the console (or use them as needed)
+        console.log('param1:', param1);
+        console.log('param2:', param2);
+        // JavaScript to dynamically set the restaurant name
+        document.getElementById('restaurant-name').textContent = param1;
         // JavaScript to dynamically set the restaurant name
         document.getElementById('restaurant-name').textContent = "Dynamic Restaurant Name";
     </script>
