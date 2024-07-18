@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%); /* Blue gradient background */
+    padding: 20px; /* Adding padding to body for extra space */
+}
+
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Changed to 100% to allow margin control */
+    max-width: 400px;
+    margin: 0 20px; /* Added margin for left and right spacing */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #1E3A5F; /* Darker blue color for heading */
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.menu-container {
+    text-align: left;
+}
+
+.menu-item {
+    background: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h2 {
+    margin: 0;
+    color: #333;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #007bff;
+}

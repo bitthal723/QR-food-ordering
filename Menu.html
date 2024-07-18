@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Card</title>
+    <link rel="stylesheet" href="Menu.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="restaurant-name">Restaurant Menu</h1>
+        <div id="menu-container" class="menu-container">
+            <!-- Menu items will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database(app);
+
+        // Reference to your menu items in Firebase
+        const menuRef = database.ref('menuItems');
+
+        // Function to dynamically set the restaurant name
+        document.getElementById('restaurant-name').textContent = "Dynamic Restaurant Name";
+
+        // Function to create menu item HTML
+        function createMenuItem(item) {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('menu-item');
+            
+            const itemName = document.createElement('h2');
+            itemName.textContent = item.name;
+            itemDiv.appendChild(itemName);
+
+            const itemDescription = document.createElement('p');
+            itemDescription.textContent = item.description;
+            itemDiv.appendChild(itemDescription);
+
+            const itemPrice = document.createElement('p');
+            itemPrice.classList.add('price');
+            itemPrice.textContent = `$${item.price}`;
+            itemDiv.appendChild(itemPrice);
+
+            return itemDiv;
+        }
+
+        // Fetch menu items from Firebase and display them
+        menuRef.on('value', (snapshot) => {
+            const menuContainer = document.getElementById('menu-container');
+            menuContainer.innerHTML = ''; // Clear previous content
+            const menuItems = snapshot.val();
+            for (const key in menuItems) {
+                const menuItem = createMenuItem(menuItems[key]);
+                menuContainer.appendChild(menuItem);
+            }
+        });
+    </script>
+</body>
+</html>
