@@ -21,13 +21,13 @@
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            databaseURL: "YOUR_DATABASE_URL",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyBo40cRy16_ihG26qGP8eS-yC-IogF5CJA",
+            authDomain: "food-order-via-qr.firebaseapp.com",
+            projectId: "food-order-via-qr",
+            storageBucket: "food-order-via-qr.appspot.com",
+            messagingSenderId: "379962427721",
+            appId: "1:379962427721:web:16df1b9d87b6c4a01e7298",
+            measurementId: "G-JDSZTEBKC2"
         };
 
         // Initialize Firebase
@@ -35,7 +35,7 @@
         const database = firebase.database(app);
 
         // Reference to your menu items in Firebase
-        const menuRef = database.ref('menuItems');
+        const menuRef = database.ref('restaurants/TPEtLDsrVi3dxxyAtuhL/menu');
 
         // Function to dynamically set the restaurant name
         document.getElementById('restaurant-name').textContent = "Dynamic Restaurant Name";
