@@ -1,17 +1,17 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Default font for the body */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%); /* Blue gradient background */
-    padding: 20px; /* Adding padding to body for extra space */
+    background: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%); 
+    padding: 20px;  
 }
 
 .container {
     text-align: center;
-    background: #ffffff;
+    background: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%);;
     padding: 30px 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -53,29 +53,55 @@ button:hover {
 button:active {
     transform: translateY(0);
 }
-
-.menu-container {
-    text-align: left;
-}
-
-.menu-item {
-    background: #f1f1f1;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item h2 {
+html {
     margin: 0;
-    color: #333;
-}
+    padding: 0;
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%);
+    font-family: 'Roboto', sans-serif; /* Default font for the body */
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 16px; /* Space between grid items */
+    padding: 16px;
+    max-width: 1200px; /* Limit maximum width */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  .grid-item {
+    border: 1px solid #ddd;
+    padding: 16px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Font for item names */
+    background-color: #e2e2e2;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  
 
-.menu-item p {
-    margin: 5px 0;
-}
-
-.price {
-    font-weight: bold;
-    color: #007bff;
-}
+  .grid-item strong {
+    font-family: 'Roboto', sans-serif; /* Font for item names */
+    font-weight: 700; /* Bold font weight */
+   
+    color: #333; /* Darker color for better contrast */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+    display: block; /* Ensures the item name is on a new line */
+  }
+ 
