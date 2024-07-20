@@ -1,33 +1,26 @@
 body {
-    font-family: 'Roboto', sans-serif; /* Default font for the body */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%); 
-    padding: 20px;  
-}
-
+    min-height: 100vh;
+    font-family: "Ubuntu", sans-serif;
+ 
+  }
+  html{
+    background-color: #007bff;
+  }
 .container {
     text-align: center;
-    background: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%);;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%; /* Changed to 100% to allow margin control */
-    max-width: 400px;
-    margin: 0 20px; /* Added margin for left and right spacing */
 }
 
 h1 {
     font-size: 2em;
-    margin-bottom: 25px;
-    color: #1E3A5F; /* Darker blue color for heading */
+    margin-bottom: 10px;
+    color: #ffffff; /* Darker blue color for heading */
     font-weight: bold;
 }
 
-.button-container {
+/* .button-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -52,37 +45,23 @@ button:hover {
 
 button:active {
     transform: translateY(0);
-}
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: linear-gradient(135deg, #87CEFA 0%, #4682B4 100%);
-    font-family: 'Roboto', sans-serif; /* Default font for the body */
-  }
-  
-  .grid-container {
+} */
+
+.grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     gap: 16px; /* Space between grid items */
-    padding: 16px;
     max-width: 1200px; /* Limit maximum width */
     width: 100%; /* Full width */
     box-sizing: border-box; /* Include padding in width */
+    margin-bottom: 60px;
   }
   
   .grid-item {
     border: 1px solid #ddd;
     padding: 16px;
+    color: gray;
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Font for item names */
     background-color: #e2e2e2;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -97,11 +76,89 @@ html {
   
 
   .grid-item strong {
-    font-family: 'Roboto', sans-serif; /* Font for item names */
     font-weight: 700; /* Bold font weight */
-   
-    color: #333; /* Darker color for better contrast */
+    color: #000; /* Darker color for better contrast */
     text-transform: capitalize; /* Capitalize the first letter of each word */
     display: block; /* Ensures the item name is on a new line */
   }
- 
+
+  .quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.quantity-btn {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+  /* padding: 4px 8px; */
+  /* margin: 0 4px; */
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 25px; /* Fixed width for uniform size */
+  text-align: center; /* Center the text */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.quantity-btn:hover {
+  background-color: #0056b3;
+}
+
+.quantity-controls span {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.2em;
+  width: 25px; /* Fixed width to match the buttons */
+  text-align: center;
+  display: inline-block;
+}
+
+#details {
+  text-align: center;
+}
+
+#details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+#details strong {
+  font-family: 'Ubuntu', sans-serif; /* Font for item names */
+  font-weight: 700; /* Bold font weight */
+  font-size: 1.5em; /* Slightly larger font size */
+  color: #333; /* Darker color for better contrast */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+  display: block; /* Ensures the item name is on a new line */
+  margin-bottom: 8px; /* Space below the item name */
+}
+
+#details p {
+  font-family: 'Ubuntu', sans-serif; /* Font for descriptions */
+  font-weight: 400; /* Regular font weight */
+  font-size: 1em; /* Normal font size */
+  color: #666; /* Slightly lighter color for descriptions */
+  margin-bottom: 8px; /* Space below each paragraph */
+}
+
+#order-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  #order-button:hover {
+    background-color: #218838;
+  }

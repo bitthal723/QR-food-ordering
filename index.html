@@ -10,7 +10,7 @@
     <div class="container">
         <h1 id="restaurant-name">Restaurant Name</h1>
         <div class="button-container">
-            <button onclick="location.href='Menu.html'">Menu Card</button>
+            <button id ="menuBtn">Menu Card</button>
             <button onclick="location.href='track-order.html'">Track Order</button>
             <button onclick="location.href='feedback.html'">Feedback</button>
         </div>
@@ -26,12 +26,22 @@
         const params = new URLSearchParams(urlObject.search);
 
         // Get the values of the parameters
-        const param1 = params.get('restId');
-        const param2 = params.get('tableNum');
+        const restId = params.get('restId');
+        const tableNumber = params.get('tableNum');
+         const restName = "apna restaurant"//params.get('restName')
 
-        // Log the values to the console (or use them as needed)
-        console.log('param1:', param1);
-        console.log('param2:', param2);
+        const jsData = {restId : restId,
+                        tableNum : tableNumber,
+                        restName : restName}
+        
+        document.getElementById("menuBtn").onclick = function () {
+        sessionStorage.setItem('jsData', JSON.stringify(jsData))
+    
+        console.log("hello")
+        location.href = "Menu.html";
+    };
+       
+
         // JavaScript to dynamically set the restaurant name
         document.getElementById('restaurant-name').textContent = param1;
         // JavaScript to dynamically set the restaurant name
