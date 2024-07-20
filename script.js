@@ -108,7 +108,7 @@ function attachEventListeners() {
 
   document.getElementById('order-button').onclick = () =>{
     if(itemQuantitySelected.size != 0){
-        location.href = "PlaceOder.html"
+        location.href = "PlaceOrder.html"
         console.log("order placed")
     }
   }
