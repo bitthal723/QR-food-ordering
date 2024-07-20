@@ -35,7 +35,7 @@ function displayMenu(items) {
         itemDiv.className = 'grid-item';
         itemDiv.id = 'grid-item-id'
         itemDiv.innerHTML = `<strong>${item["item_name"]}</strong>
-        <p>$${item.price.toFixed(2)}</p>
+        <p>&#x20B9 ${item.price.toFixed(2)}</p>
         <div class="quantity-controls">
         <button class="quantity-btn decrease" data-index="${index}" data-name="${item["item_name"]}" data-price="${item.price}">-</button>
         <span class="quantity" id="quantity-${index}">0</span>

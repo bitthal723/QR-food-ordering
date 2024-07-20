@@ -28,7 +28,7 @@
         // Get the values of the parameters
         const restId = params.get('restId');
         const tableNumber = params.get('tableNum');
-         const restName = "apna restaurant"//params.get('restName')
+         const restName = params.get('restName')
 
         const jsData = {restId : restId,
                         tableNum : tableNumber,
@@ -36,14 +36,12 @@
         
         document.getElementById("menuBtn").onclick = function () {
         sessionStorage.setItem('jsData', JSON.stringify(jsData))
-    
-        console.log("hello")
         location.href = "Menu.html";
     };
        
 
         // JavaScript to dynamically set the restaurant name
-        document.getElementById('restaurant-name').textContent = param1;
+        document.getElementById('restaurant-name').textContent = restName;
         // JavaScript to dynamically set the restaurant name
        
     </script>

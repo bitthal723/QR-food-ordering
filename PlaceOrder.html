@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="placeOrder.css">
 </head>
 <body>
-    place order
-    <script type="module" src="placeOrder.js"></script>
+  <div id="order-summary-container">
+    <h1>Order Summary</h1>
+    <div id="order-summary"></div>
+    <div id="total-amount"></div>
+    <button id="place-order-button" onclick="finalizeOrder()">Place Order</button>
+  </div>
+  
+  <script src="placeOrder.js"></script>
 </body>
 </html>
