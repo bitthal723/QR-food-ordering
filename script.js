@@ -81,8 +81,7 @@ function attachEventListeners() {
         itemQuantitySelected.set(itemName, 1)
     }
     
-    console.log(itemQuantitySelected);
-    console.log(priceMap);
+    
   }
   
   function handleDecrease(event) {
@@ -102,14 +101,19 @@ function attachEventListeners() {
     }
     
     quantitySpan.textContent = quantity;
-    console.log(itemQuantitySelected);
-    console.log(priceMap);
+   
   }
 
   document.getElementById('order-button').onclick = () =>{
     if(itemQuantitySelected.size != 0){
+      
+
+      
+        sessionStorage.setItem('orderSummary', JSON.stringify(Array.from(itemQuantitySelected.entries())));
+        sessionStorage.setItem('priceList', JSON.stringify(Array.from(priceMap.entries())));
+        
         location.href = "PlaceOrder.html"
-        console.log("order placed")
+        
     }
   }
 
