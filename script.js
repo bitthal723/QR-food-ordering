@@ -14,10 +14,12 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 const database = getFirestore();
+var getValue = JSON.parse(sessionStorage.getItem('jsData'))
+
 
 // Reference to your menu items in Firebase
-const menuRef = collection(database, 'restaurants/TPEtLDsrVi3dxxyAtuhL/menu');
-var getValue = JSON.parse(sessionStorage.getItem('jsData'))
+const menuRef = collection(database, 'restaurants/'+getValue.restId+'/menu');
+
 document.getElementById('restaurant-name').textContent = getValue.restName
 async function fetchMenuItems() {
     const arr = [];
